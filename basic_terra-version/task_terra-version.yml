@@ -4,7 +4,7 @@ image_resource:
   name: terraform
   type: docker-image
   source:
-    repository: thibfilipe/Terra-Concourse-plan
+    repository: hashicorp/terraform
 
 run:
   path: terraform init
