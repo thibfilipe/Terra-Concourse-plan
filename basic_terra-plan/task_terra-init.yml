@@ -6,10 +6,6 @@ image_resource:
     repository: ljfranklin/terraform-resource
 
 run:
-  path: sh
+  path: terraform
   args:
-  - -exc
-  - |
-  - cd tmp/build/get/my-git-repo/basic_terra-plan
-  - |
-  - terraform init
+  - plan tmp/build/get/my-git-repo/basic_terra-plan/Plan_test.tf
