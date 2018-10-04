@@ -10,8 +10,7 @@ inputs:
 
 run:
   path: terraform
-  args:
-  - init my-git-repo/basic_terra-plan/
+  args: [init my-git-repo/basic_terra-plan/]
 
 
 
