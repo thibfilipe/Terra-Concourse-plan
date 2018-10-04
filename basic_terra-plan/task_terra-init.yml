@@ -6,8 +6,7 @@ image_resource:
     repository: ljfranklin/terraform-resource
 
 inputs:
-- name: input
-  path: my-git-repo
+- name: my-git-repo
 
 run:
   path: terraform
