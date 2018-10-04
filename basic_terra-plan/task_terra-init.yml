@@ -6,5 +6,8 @@ image_resource:
     repository: hashicorp/terraform
 
 run:
-  path: terraform
-  args: [init] 
+  path: cd
+  args:
+  - /tmp/build/get/my-git-repo/basic_terra-plan
+  - |
+    terraform init
