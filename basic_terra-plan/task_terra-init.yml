@@ -5,8 +5,15 @@ image_resource:
   source:
     repository: ljfranklin/terraform-resource
 
+inputs:
+- name: input
+  path: my-git-repo/basic_terra-plan/Plan_test.tf
+
 run:
   path: terraform
   args:
   - init
-    Plan_test.tf
+    input
+
+
+
