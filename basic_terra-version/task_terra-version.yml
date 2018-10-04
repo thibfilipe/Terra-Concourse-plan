@@ -6,5 +6,4 @@ image_resource:
     repository: hashicorp/terraform
 
 run:
-  path: terraform
-  args: init 
+  args: [terraform init] 
