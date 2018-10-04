@@ -7,13 +7,13 @@ image_resource:
 
 inputs:
 - name: input
-  path: my-git-repo/basic_terra-plan/Plan_test.tf
+  path: my-git-repo
 
 run:
   path: terraform
   args:
   - init
-    input
+    my-git-repo/basic_terra-plan/Plan_test.tf
 
 
 
