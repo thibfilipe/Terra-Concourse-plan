@@ -6,8 +6,10 @@ image_resource:
     repository: ljfranklin/terraform-resource
 
 run:
-  path: cd
+  path: sh
   args:
-  - /tmp/build/get/my-git-repo/basic_terra-plan
+  - -exc
   - |
-    terraform apply
+  - cd tmp/build/get/my-git-repo/basic_terra-plan
+  - |
+  - terraform apply
