@@ -9,8 +9,8 @@ inputs:
 - name: my-git-repo
 
 run:
-  path: terraform
-  args: [init my-git-repo/basic_terra-plan/]
+  path: terraform init
+  args: [my-git-repo/basic_terra-plan/]
 
 
 
