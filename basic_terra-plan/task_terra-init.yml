@@ -8,4 +8,4 @@ image_resource:
 run:
   path: terraform
   args:
-  - plan tmp/build/get/my-git-repo/basic_terra-plan/Plan_test.tf
+  - init tmp/build/get/my-git-repo/basic_terra-plan/Plan_test.tf
