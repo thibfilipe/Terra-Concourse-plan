@@ -5,11 +5,14 @@ image_resource:
   source:
     repository: ljfranklin/terraform-resource
 
+inputs:
+- name: my-git-repo
+
 run:
-  path: sh
+  path: terraform
   args:
-  - -exc
-  - |
-  - cd tmp/build/get/my-git-repo/basic_terra-plan
-  - |
-  - terraform plan
+  - plan
+  - my-git-repo/basic_terra-plan/
+
+
+
