@@ -13,6 +13,5 @@ run:
   args: 
   - +x
   - my-git-repo/basic_terra-plan/init.sh
-
-
-
+  - |
+  - my-git-repo/basic_terra-plan/init.sh
