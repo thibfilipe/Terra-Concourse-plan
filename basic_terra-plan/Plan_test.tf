@@ -14,10 +14,13 @@ provider "azurerm" {
 # Code
 ######################################################################
 
-module "TerraRGConcourse" {
-  # Module Location
-  source = "my-git-repo/basic_terra-plan/Terra_RG"
 
-  # Module variable
-  RGName = "RG_Concourse"
+resource "azurerm_resource_group" "RG-test" {
+  name     = "RG_Concourse"
+  location = "Westeurope"
+
+  tags {
+    environment = "Test"
+    usage       = "AutoConcourse"
+  }
 }
