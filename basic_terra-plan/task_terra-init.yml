@@ -11,7 +11,7 @@ inputs:
 run:
   path: sh
   args: 
-  - chmod +X
+  - chmod +x
   - my-git-repo/basic_terra-plan/init.sh
 
 
