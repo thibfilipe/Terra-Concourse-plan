@@ -9,11 +9,7 @@ inputs:
 - name: my-git-repo
 
 run:
-  path: terraform
-  args:
-  - plan
-  - my-git-repo/basic_terra-plan/
-  - -input=false
+  path: my-git-repo/basic_terra-plan/plan.sh
 
 
 
