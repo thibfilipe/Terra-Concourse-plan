@@ -16,7 +16,7 @@ provider "azurerm" {
 
 module "TerraRGConcourse" {
   # Module Location
-  source = "github.com/thibfilipe/Terra-Azure-Modules/Terra_RG"
+  source = "./Terra_RG"
 
   # Module variable
   RGName = "RG_Concourse"
