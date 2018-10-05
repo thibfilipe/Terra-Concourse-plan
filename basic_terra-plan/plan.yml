@@ -1,0 +1,52 @@
+---
+resources:
+- name: my-git-repo
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/thibfilipe/Terra-Concourse-plan
+
+jobs:
+
+- name: Top
+  plan:
+  - get: my-git-repo
+    trigger: true
+  - task: task_top
+    file: my-git-repo/basic_terra-plan/task_top.yml
+
+- name: Permissions
+  plan:
+  - get: my-git-repo
+    passed:
+      - Top
+    trigger: true
+  - task: task_permission
+    file: my-git-repo/basic_terra-plan/task_permission.yml
+
+- name: Terra-Init
+  plan:
+  - get: my-git-repo
+    passed:
+      - Permissions
+    trigger: true
+  - task: task_terra-init
+    file: my-git-repo/basic_terra-plan/task_terra-init.yml
+
+- name: Terra-Plan
+  plan:
+  - get: my-git-repo
+    passed:
+      - Terra-Init
+    trigger: true
+  - task: task_terra-plan
+    file: my-git-repo/basic_terra-plan/task_terra-plan.yml
+
+- name: Terra-Apply
+  plan:
+  - get: my-git-repo
+    passed:
+      - Terra-Plan
+    trigger: false
+  - task: task_terra-apply
+    file: my-git-repo/basic_terra-plan/task_terra-apply.yml

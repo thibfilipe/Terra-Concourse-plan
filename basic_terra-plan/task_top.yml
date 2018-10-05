@@ -9,6 +9,7 @@ inputs:
 - name: my-git-repo
 
 run:
-  path: sh
+  path: chmod
   args: 
-  - my-git-repo/basic_terra-plan/plan.sh
+  - +x
+  - my-git-repo/basic_terra-plan/permission.sh
