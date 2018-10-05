@@ -14,5 +14,5 @@ run:
   - init
     my-git-repo/basic_terra-plan/
   - |
-    plan
+  - plan
     my-git-repo/basic_terra-plan/
