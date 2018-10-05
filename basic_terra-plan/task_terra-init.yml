@@ -13,6 +13,7 @@ run:
   args:
   - init
   - my-git-repo/basic_terra-plan/
+  - -input=false
 
 
 

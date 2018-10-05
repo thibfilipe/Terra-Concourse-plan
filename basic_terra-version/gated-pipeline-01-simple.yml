@@ -25,7 +25,7 @@ jobs:
     
 - name: Terra-Apply
   plan:
-  - get: my-resource
+  - get: my-git-repo
     passed:
       - Terra-Plan
     trigger: false
