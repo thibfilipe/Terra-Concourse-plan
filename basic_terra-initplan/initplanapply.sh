@@ -6,4 +6,4 @@ cd my-git-repo/basic_terra-plan/
 
 terraform init 
 terraform plan
-terraform apply
+terraform apply --auto-approve
