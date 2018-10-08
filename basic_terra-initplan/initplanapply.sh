@@ -2,7 +2,7 @@
 
 set -e 
 
-cd my-git-repo/basic_terra-plan/
+cd my-git-repo/basic_terra-initplan/
 
 terraform init 
 
