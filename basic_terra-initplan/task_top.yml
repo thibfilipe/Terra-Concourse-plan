@@ -1,0 +1,15 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: ljfranklin/terraform-resource
+
+inputs:
+- name: my-git-repo
+
+run:
+  path: chmod
+  args: 
+  - +x
+  - my-git-repo/basic_terra-initplan/permissions.sh
