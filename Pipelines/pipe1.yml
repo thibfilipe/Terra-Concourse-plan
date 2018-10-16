@@ -24,3 +24,11 @@ jobs:
   - task: task_terra-initplanapply
     file: my-git-repo/basic_terra-initplan/task_terra-initplanapply.yml
     
+- name: Commit-to-Master
+  plan:
+  - get: my-git-repo
+    passed:
+      - Terra-Apply
+    trigger: true
+  - task: task_commit
+    file: my-git-repo/basic_terra-initplan/task_commit.yml

@@ -1,0 +1,35 @@
+---
+resources:
+- name: my-git-repo
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/thibfilipe/Terra-Concourse-plan
+
+- name: Terradev-test
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/thibfilipe/pushtest
+
+
+jobs:
+- name: Terra-Init-Plan
+  plan:
+  - get: my-git-repo
+  - get: Terradev-test
+    trigger: true
+  - task: task_terra-init-plan
+    file: my-git-repo/basic_terra-plan/task_terra-init-plan.yml
+
+    
+- name: Terra-Apply
+  plan:
+  - get: my-git-repo
+  - get: Terradev-test
+    passed:
+      - Terra-Init-Plan
+    trigger: false
+  - task: task_terra-apply
+    file: my-git-repo/basic_terra-plan/task_terra-apply.yml
+    
