@@ -20,7 +20,7 @@ jobs:
   - get: Pipeline_resources
     trigger: true
   - task: task_terra-init-plan
-    file: Pipeline_resources/terra-concourse_project/task_terra-init-plan.yml
+    file: Pipeline_resources/terra-concourse_project/task_terra-initplan.yml
 
     
 - name: Terra-Apply
