@@ -6,11 +6,6 @@ resources:
     branch: master
     uri: https://github.com/thibfilipe/Terra-Concourse-plan
 
-- name: Terradev-test
-  type: git
-  source:
-    uri: https://github.com/thibfilipe/pushtest
-
 
 jobs:
 - name: Terra-Init-Plan
@@ -27,8 +22,9 @@ jobs:
     passed:
       - Terra-Init-Plan
     trigger: false
+  - get: Git-resources
   - task: task_terra-apply
-    file: Pipeline_resources/terra-concourse_project/task_terra-apply.yml
+    file: Pipeline_resources/terra-concourse_project/task_terra-initplanapply.yml
     
 - name: Merge
   plan:
@@ -36,5 +32,6 @@ jobs:
     passed:
       - Terra-Apply
     trigger: false
+  - get: Git-resources
   - task: task_commit
     file: Pipeline_resources/terra-concourse_project/task_commit.yml
