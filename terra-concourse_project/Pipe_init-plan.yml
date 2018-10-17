@@ -6,12 +6,18 @@ resources:
     branch: master
     uri: https://github.com/thibfilipe/Terra-Concourse-plan
 
+- name: Git_resources
+  type: git
+  source:
+    branch: test
+    uri: https://github.com/thibfilipe/pushtest
 
 jobs:
 - name: Terra-Init-Plan
   plan:
   - get: Pipeline_resources
     trigger: true
+  - get: Git_resources
   - task: task_terra-init-plan
     file: Pipeline_resources/terra-concourse_project/task_terra-initplan.yml
 
@@ -22,6 +28,7 @@ jobs:
     passed:
       - Terra-Init-Plan
     trigger: false
+  - get: Git_resources
   - task: task_terra-apply
     file: Pipeline_resources/terra-concourse_project/task_terra-initplanapply.yml
     

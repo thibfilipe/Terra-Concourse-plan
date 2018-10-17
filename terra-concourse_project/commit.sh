@@ -2,7 +2,8 @@
 
 set -e 
 
-cd Pipeline_resources/pushtest
+git clone https://github.com/thibfilipe/pushtest
+cd pushtest
 git checkout master
 git merge origin/test
 
