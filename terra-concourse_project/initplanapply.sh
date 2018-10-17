@@ -2,10 +2,7 @@
 
 set -e 
 
-cd Pipeline_resources
-ls
-cd pushtest
-git checkout origin/test
+cd Git_resources
 
 terraform init 
 
