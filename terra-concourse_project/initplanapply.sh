@@ -2,7 +2,7 @@
 
 set -e 
 
-cd Git-resources/pushtest
+cd Pipeline_resources/pushtest
 git checkout origin/test
 
 terraform init 

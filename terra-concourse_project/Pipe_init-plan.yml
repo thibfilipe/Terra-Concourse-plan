@@ -22,7 +22,6 @@ jobs:
     passed:
       - Terra-Init-Plan
     trigger: false
-  - get: Git-resources
   - task: task_terra-apply
     file: Pipeline_resources/terra-concourse_project/task_terra-initplanapply.yml
     
@@ -32,6 +31,5 @@ jobs:
     passed:
       - Terra-Apply
     trigger: false
-  - get: Git-resources
   - task: task_commit
     file: Pipeline_resources/terra-concourse_project/task_commit.yml

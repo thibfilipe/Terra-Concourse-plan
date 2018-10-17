@@ -7,7 +7,6 @@ image_resource:
 
 inputs:
 - name: Pipeline_resources
-- name: Git-resources
 
 run:
   path: sh
