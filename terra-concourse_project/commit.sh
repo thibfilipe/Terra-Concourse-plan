@@ -2,7 +2,7 @@
 
 set -e 
 
-cd Terradev-test
+cd Git-resources/pushtest
 git checkout master
 git merge origin/test
 

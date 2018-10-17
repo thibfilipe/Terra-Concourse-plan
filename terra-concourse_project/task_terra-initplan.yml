@@ -8,6 +8,9 @@ image_resource:
 inputs:
 - name: Pipeline_resources
 
+outputs:
+- name: Git-resources
+
 run:
   path: sh
   args: 

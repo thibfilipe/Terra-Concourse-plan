@@ -15,8 +15,6 @@ resources:
 jobs:
 - name: Terra-Init-Plan
   plan:
-  - get: Terradev-test
-    trigger: true
   - get: Pipeline_resources
     trigger: true
   - task: task_terra-init-plan
@@ -25,9 +23,6 @@ jobs:
     
 - name: Terra-Apply
   plan:
-  - get: Terradev-test
-    passed:
-      - Terra-Init-Plan
   - get: Pipeline_resources
     passed:
       - Terra-Init-Plan
@@ -37,10 +32,6 @@ jobs:
     
 - name: Merge
   plan:
-  - get: Terradev-test
-    passed:
-      - Terra-Apply
-    trigger: false
   - get: Pipeline_resources
     passed:
       - Terra-Apply
