@@ -3,7 +3,8 @@
 set -e 
 
 ls
-cd
+cd Git_resources
+ls
 cd Git_resources/pushtest
 ls
 
