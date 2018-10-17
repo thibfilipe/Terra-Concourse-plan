@@ -10,6 +10,7 @@ inputs:
 
 outputs:
 - name: Git-resources
+  path: pushtest
 
 run:
   path: sh
