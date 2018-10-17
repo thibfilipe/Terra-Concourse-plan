@@ -6,9 +6,9 @@ image_resource:
     repository: ljfranklin/terraform-resource
 
 inputs:
-- name: my-git-repo
+- name: Pipeline_resources
 
 run:
   path: sh
   args: 
-  - my-git-repo/basic_terra-initplan/initplanapply.sh
+  - Pipeline_resources/terra-concourse_project/initplanapply.sh

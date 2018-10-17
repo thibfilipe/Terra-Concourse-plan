@@ -1,6 +1,6 @@
 ---
 resources:
-- name: my-git-repo
+- name: Pipeline_resources
   type: git
   source:
     branch: master
@@ -9,27 +9,41 @@ resources:
 - name: Terradev-test
   type: git
   source:
-    branch: master
     uri: https://github.com/thibfilipe/pushtest
 
 
 jobs:
 - name: Terra-Init-Plan
   plan:
-  - get: my-git-repo
   - get: Terradev-test
     trigger: true
+  - get: Pipeline_resources
+    trigger: true
   - task: task_terra-init-plan
-    file: my-git-repo/basic_terra-plan/task_terra-init-plan.yml
+    file: Pipeline_resources/terra-concourse_project/task_terra-init-plan.yml
 
     
 - name: Terra-Apply
   plan:
-  - get: my-git-repo
   - get: Terradev-test
+    passed:
+      - Terra-Init-Plan
+  - get: Pipeline_resources
     passed:
       - Terra-Init-Plan
     trigger: false
   - task: task_terra-apply
-    file: my-git-repo/basic_terra-plan/task_terra-apply.yml
+    file: Pipeline_resources/terra-concourse_project/task_terra-apply.yml
     
+- name: Merge
+  plan:
+  - get: Terradev-test
+    passed:
+      - Terra-Apply
+    trigger: false
+  - get: Pipeline_resources
+    passed:
+      - Terra-Apply
+    trigger: false
+  - task: task_commit
+    file: Pipeline_resources/terra-concourse_project/task_commit.yml
